@@ -2,13 +2,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/userRoute.js");
 const authRouter = require("./routes/auth.js");
-
+require('dotenv').config()
 const app = express();
 
 app.use(express.json());
 
 mongoose.connect(
-  "mongodb+srv://hugo:Eladab-rabie37@cluster0.eh6dp.mongodb.net/miniBooking?retryWrites=true&w=majority",
+  process.env.con,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
